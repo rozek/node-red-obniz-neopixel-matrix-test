@@ -12,12 +12,21 @@ While the idea behind the obniz board has its benefits, the quality of software 
 
 In order to run these examples you will need
 
-* a running Node-RED instance,
+* a working Node-RED instance,
 * [node-red-contrib-obniz](https://flows.nodered.org/node/node-red-contrib-obniz) - which installs some nodes to communicate with obniz boards,
-* an obniz board and
+* an obniz board,
+* Internet access (because of the obniz board) and
 * any kind of WS2812 RGB LED or string
 
 ## Instructions ##
+
+Once you have all the components together, you will have to
+
+* start up (and configure) the obniz board
+* connect the WS2812 LED string
+* import these flows
+* configure the obniz nodes (i.e., enter the credentials of your board) and
+* start the flows as desired
 
 ![](flows.png)
 
