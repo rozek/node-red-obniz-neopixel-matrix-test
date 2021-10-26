@@ -38,6 +38,8 @@ Once you have all the components together, you will have to
 
 ### Configure Obniz Nodes ###
 
+Once the flows have been imported, the obniz nodes have to be configured: you have to provide the serial id of your board and the access key you generated in the [obniz developers console](https://obniz.com/console/devices). "Instructions" can be found on the [obniz node page](https://flows.nodered.org/node/node-red-contrib-obniz) - as usual, there are in a horrible shape, but fortunately, it turns out not to be too difficult
+
 ### Run desired Flows ###
 
 This repository contains four different flows. Because of how the obniz board works, they have to share the configured wiring - once set up, it will be stored in the flow context and reused by any other flow (which is why it has to be reset automatically upon re-deployment)
