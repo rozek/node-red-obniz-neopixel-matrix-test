@@ -32,7 +32,12 @@ Once you have all the components together, you will have to
 
 ### Start-up the Obniz Board ###
 
-After powering up the obniz board, you will have set-up a Wifi connection (as desribed in the board's instruction manual) and - once the board has established a connection to its server - configure board access in the [obniz developer's console](https://obniz.com/console/devices): simply "+ Add device", choose your board type...
+After powering up the obniz board, you will have set-up a Wifi connection (as desribed in the board's instruction manual) and - once the board has established a connection to its server - configure board access in the [obniz developer's console](https://obniz.com/console/devices): simply
+
+* press "+ Add device"
+* choose your board type
+* press "I'm ready" and
+* type in your obniz id and press "Next"
 
 ### Connect the WS2812 LED String ###
 
