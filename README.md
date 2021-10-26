@@ -39,6 +39,8 @@ After powering up the obniz board, you will have set-up a Wifi connection (as de
 * press "I'm ready" and
 * type in your obniz id and press "Next"
 
+Right now, everybody may access your obniz board just by providing its id. It is therefore highly recommended to generate an "Access Token" in the developer's console. Such a token does not automatically expire but remains until explicitly deleted or renewed. As soon as a token has been assigned, board access is only granted if the proper token is provided along with the request (see below)
+
 ### Connect the WS2812 LED String ###
 
 In this example, the WS2812 "data in" wire is connected to pin 4 of the obniz board. If you prefer a different pin, you may do so by modifying the "obniz function" nodes accordingly.
