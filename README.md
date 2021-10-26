@@ -36,6 +36,10 @@ Once you have all the components together, you will have to
 
 ### Import the Flows from this Repo ###
 
+If not already done, you should install the obniz nodes from [node-red-contrib-obniz](https://flows.nodered.org/node/node-red-contrib-obniz) as described on that page.
+
+Now, you may import the [flows](https://raw.githubusercontent.com/rozek/node-red-obniz-neopixel-matrix-test/main/flows.json) from this repository. Just select the whole text, copy it into the clipboard, then choose "Import" from the Node_RED Editor menu, copy the clipboard contents, press "Import" and drag the flows to a place of your choice.
+
 ### Configure Obniz Nodes ###
 
 Once the flows have been imported, the obniz nodes have to be configured: you have to provide the serial id of your board and the access key you generated in the [obniz developers console](https://obniz.com/console/devices). "Instructions" can be found on the [obniz node page](https://flows.nodered.org/node/node-red-contrib-obniz) - as usual, there are in a horrible shape, but fortunately, it turns out not to be too difficult
