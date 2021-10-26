@@ -32,6 +32,8 @@ Once you have all the components together, you will have to
 
 ### Start-up the Obniz Board ###
 
+After powering up the obniz board, you will have set-up a Wifi connection (as desribed in the board's instruction manual) and - once the board has established a connection to its server - configure board access in the [obniz developer's console](https://obniz.com/console/devices): simply "+ Add device", choose your board type...
+
 ### Connect the WS2812 LED String ###
 
 In this example, the WS2812 "data in" wire is connected to pin 4 of the obniz board. If you prefer a different pin, you may do so by modifying the "obniz function" nodes accordingly.
