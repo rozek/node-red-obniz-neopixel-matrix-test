@@ -1,0 +1,305 @@
+[
+    {
+        "id": "fada2e3557c32725",
+        "type": "comment",
+        "z": "a48cb54775e4adb7",
+        "name": "Neopixel 16x16 Matrix",
+        "info": "",
+        "x": 1440,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cb0394a7f5d9e05c",
+        "type": "inject",
+        "z": "a48cb54775e4adb7",
+        "name": "start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1570,
+        "y": 160,
+        "wires": [
+            [
+                "9fc8d1f8d76c39cb"
+            ]
+        ]
+    },
+    {
+        "id": "2d567467b5ba88ba",
+        "type": "comment",
+        "z": "a48cb54775e4adb7",
+        "name": "x-axis",
+        "info": "",
+        "x": 1390,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9fc8d1f8d76c39cb",
+        "type": "obniz-function",
+        "z": "a48cb54775e4adb7",
+        "obniz": "da56dbaeec07a74f",
+        "name": "",
+        "code": "obniz.display.clear()\nobniz.display.print(\"Neopixel Matrix x-axis\")\n\nlet Matrix = flow.get('obniz-neopixel-matrix')\nif (Matrix == null) {\n  Matrix = obniz.wired('WS2812',{ gnd:11, vcc:7, din:4 })\n  flow.set('obniz-neopixel-matrix',Matrix)\n}\n\nlet red = [0xFF,0x00,0x00]\nMatrix.rgbs([\n  red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red\n])\n",
+        "x": 1740,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "acd7279111d103d6",
+        "type": "inject",
+        "z": "a48cb54775e4adb7",
+        "name": "start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1570,
+        "y": 220,
+        "wires": [
+            [
+                "480919a220665f54"
+            ]
+        ]
+    },
+    {
+        "id": "7ddee3dd6120875f",
+        "type": "comment",
+        "z": "a48cb54775e4adb7",
+        "name": "y-axis",
+        "info": "",
+        "x": 1390,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "480919a220665f54",
+        "type": "obniz-function",
+        "z": "a48cb54775e4adb7",
+        "obniz": "da56dbaeec07a74f",
+        "name": "",
+        "code": "obniz.display.clear()\nobniz.display.print(\"Neopixel Matrix y-axis\")\n\nlet Matrix = flow.get('obniz-neopixel-matrix')\nif (Matrix == null) {\n  Matrix = obniz.wired('WS2812',{ gnd:11, vcc:7, din:4 })\n  flow.set('obniz-neopixel-matrix',Matrix)\n}\n\nlet dark  = [0x00,0x00,0x00]\nlet green = [0x00,0xFF,0x00]\n\nlet LEDs = []\n  for (let i = 0; i < 5; i++) { // due to max. chain length\n    LEDs.push(green)\n    for (let j = 0; j < 15; j++) { LEDs.push(dark) }\n  }\nMatrix.rgbs(LEDs)\n",
+        "x": 1740,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46af354dc9470b98",
+        "type": "comment",
+        "z": "a48cb54775e4adb7",
+        "name": "Warning: max. chain length = 85",
+        "info": "",
+        "x": 1710,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1f49438e80ac85a2",
+        "type": "comment",
+        "z": "a48cb54775e4adb7",
+        "name": "test of 5 rows",
+        "info": "",
+        "x": 1410,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5da4b41743b97936",
+        "type": "inject",
+        "z": "a48cb54775e4adb7",
+        "name": "start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1570,
+        "y": 280,
+        "wires": [
+            [
+                "afa324f52ed8c0fb"
+            ]
+        ]
+    },
+    {
+        "id": "afa324f52ed8c0fb",
+        "type": "obniz-function",
+        "z": "a48cb54775e4adb7",
+        "obniz": "da56dbaeec07a74f",
+        "name": "",
+        "code": "  obniz.display.clear()\n  obniz.display.print(\"Neopixel Matrix Test\")\n  \n  let Matrix = flow.get('obniz-neopixel-matrix')\n  if (Matrix == null) {\n    Matrix = obniz.wired('WS2812',{ gnd:11, vcc:7, din:4 })\n    flow.set('obniz-neopixel-matrix',Matrix)\n  }\n  \n  let dark  = [0x00,0x00,0x00]\n  let red   = [0xFF,0x00,0x00]\n  let green = [0x00,0xFF,0x00]\n  let blue  = [0x00,0x00,0xFF]\n  \n  let LEDs = []\n\n  function clearUntilRow (Row) {\n    LEDs = []\n    for (let i = 0; i < Row; i++) {\n      fillNextRowWith(dark)\n    }\n  }\n  \n  function fillNextRowWith (Value) {\n    for (let i = 0; i < 16; i++) { LEDs.push(Value) }\n  }\n  \n  function testRowWith (Row, Value) {\n    clearUntilRow(Row)\n    fillNextRowWith(Value)\n    Matrix.rgbs(LEDs)\n  }\n\n  let NumberOfTests = 5 * 3                        // five rows, each with R,G,B\n\n  let currentTest = -1\n    function runNextTest () {\n      currentTest += 1\n      if (currentTest >= NumberOfTests) { return }\n      \n      let currentRow   = Math.floor(currentTest / 3)\n      let currentValue = currentTest % 3\n      switch (currentValue) {\n        case 0: testRowWith(currentRow,red);  break\n        case 1: testRowWith(currentRow,green); break\n        case 2: testRowWith(currentRow,blue);  break\n      }\n      \n      setTimeout(runNextTest,4000)\n    }\n  runNextTest()",
+        "x": 1740,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fdde153e05cc894b",
+        "type": "inject",
+        "z": "a48cb54775e4adb7",
+        "name": "on Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1430,
+        "y": 100,
+        "wires": [
+            [
+                "290901ac912741bf"
+            ]
+        ]
+    },
+    {
+        "id": "290901ac912741bf",
+        "type": "change",
+        "z": "a48cb54775e4adb7",
+        "name": "reset Neopixel wiring",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "obniz-neopixel-matrix",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1640,
+        "y": 100,
+        "wires": [
+            [
+                "788e471787891f87"
+            ]
+        ]
+    },
+    {
+        "id": "788e471787891f87",
+        "type": "debug",
+        "z": "a48cb54775e4adb7",
+        "name": "show",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "'wiring removed'",
+        "statusType": "jsonata",
+        "x": 1830,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b24ee282607acd77",
+        "type": "comment",
+        "z": "a48cb54775e4adb7",
+        "name": "clear matrix",
+        "info": "",
+        "x": 1410,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "afd70788b31d717f",
+        "type": "inject",
+        "z": "a48cb54775e4adb7",
+        "name": "start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1570,
+        "y": 340,
+        "wires": [
+            [
+                "7abd1980a0fb7725"
+            ]
+        ]
+    },
+    {
+        "id": "7abd1980a0fb7725",
+        "type": "obniz-function",
+        "z": "a48cb54775e4adb7",
+        "obniz": "da56dbaeec07a74f",
+        "name": "",
+        "code": "  obniz.display.clear()\n  obniz.display.print(\"Neopixel Matrix Test\")\n\n  let Matrix = flow.get('obniz-neopixel-matrix')\n  if (Matrix == null) {\n    Matrix = obniz.wired('WS2812',{ gnd:11, vcc:7, din:4 })\n    flow.set('obniz-neopixel-matrix',Matrix)\n  }\n\n  let dark = [0x00,0x00,0x00]\n\n  let LEDs = []\n    for (let i = 0; i < 85; i++) { LEDs.push(dark) }\n  Matrix.rgbs(LEDs)\n",
+        "x": 1740,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da56dbaeec07a74f",
+        "type": "obniz",
+        "obnizId": "",
+        "deviceType": "obnizboard",
+        "name": "",
+        "accessToken": "",
+        "code": ""
+    }
+]
