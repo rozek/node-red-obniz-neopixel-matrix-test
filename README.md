@@ -34,6 +34,16 @@ Once you have all the components together, you will have to
 
 ### Connect the WS2812 LED String ###
 
+In this example, the WS2812 LED String is connected to the following pins of the obniz board:
+
+* Vcc: pin 7
+* GND: pin 11
+* Din: pin 4
+
+If you prefer differnt pins, you may do so by modifying the "obniz function" nodes accordingly.
+
+Of course, you may (and _should_) connect the LED's Vcc and GND wires to your power supply rather than to an obniz Pin - but the obniz library function still wants these pins to be specified.
+ 
 ### Import the Flows from this Repo ###
 
 If not already done, you should install the obniz nodes from [node-red-contrib-obniz](https://flows.nodered.org/node/node-red-contrib-obniz) as described on that page.
