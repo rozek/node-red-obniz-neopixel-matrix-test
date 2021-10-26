@@ -34,15 +34,9 @@ Once you have all the components together, you will have to
 
 ### Connect the WS2812 LED String ###
 
-In this example, the WS2812 LED String is connected to the following pins of the obniz board:
+In this example, the WS2812 "data in" wire is connected to pin 4 of the obniz board. If you prefer a different pin, you may do so by modifying the "obniz function" nodes accordingly.
 
-* Vcc: pin 7
-* GND: pin 11
-* Din: pin 4
-
-If you prefer differnt pins, you may do so by modifying the "obniz function" nodes accordingly.
-
-Of course, you may (and _should_) connect the LED's Vcc and GND wires to your power supply rather than to an obniz Pin - but the obniz library function still wants these pins to be specified.
+The LED's Vcc and GND wires should be directly connected to your power supply.
  
 ### Import the Flows from this Repo ###
 
