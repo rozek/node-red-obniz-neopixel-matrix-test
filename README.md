@@ -30,6 +30,23 @@ Once you have all the components together, you will have to
 
 ![](flows.png)
 
+### Start-up the Obniz Board ###
+
+### Connect the WS2812 LED String ###
+
+### Import the Flows from this Repo ###
+
+### Configure Obniz Nodes ###
+
+### Run desired Flows ###
+
+This repository contains four different flows. Because of how the obniz board works, they have to share the configured wiring - once set up, it will be stored in the flow context and reused by any other flow (which is why it has to be reset automatically upon re-deployment)
+
+* **x-axis**<br>this flow draws a "x-axis" by lighting the LEDs 0, 1, 2 up to 15
+* **y-axis**<br>this flow draws a "y-axis" by lighting the LEDs 0, 16, 32 and so on - this is useful because matrices are usually wired in a serpentine manner
+* **test of 5 rows**<br>the initial idea was to write a short function test to see if all matrix LEDs work as intended. This flow tests 5 rows of the connected matrix (because of restrictions in the obniz board) row-wise and alternately in red, green and blue
+* **clear matrix**<br>WS2812 LEDs are very bright and may disturb when lighting - this flow therefore switches all LEDs off
+
 ## License ##
 
 [MIT License](LICENSE.md)
